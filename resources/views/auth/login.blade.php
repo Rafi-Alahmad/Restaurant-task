@@ -58,7 +58,7 @@
                 </form>
                 <hr style="height: 0.5px;">
                 <div class="text-center">
-                    {{ trans('app.have_account_q') }} <a class="text-decoration-none" href="#">{{ trans('app.create_new') }}</a>
+                    {{ trans('app.dont_have_account_q') }} <a class="text-decoration-none" href="{{route('register')}}">{{ trans('app.create_new') }}</a>
                 </div>
             </div>
         </div>
