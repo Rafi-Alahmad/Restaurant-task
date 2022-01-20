@@ -9,15 +9,14 @@ use Illuminate\Support\Facades\Validator;
 
 class SettingsController extends Controller
 {
-    //
+
     public function update(Request $request)
     {
-        # code...
         Validator::make($request->all(), [
             "motto" => ['max:300'],
             "logo" => ['file', 'nullable', 'max:512'],
-            "name" => ['requierd', 'max:50'],
-        ]);
+            "name" => ['required', 'max:50'],
+        ])->validate();
         $user = User::find(Auth::guard()->user()->id);
         $user->motto = $request->motto;
         $user->name = $request->name;
@@ -27,7 +26,9 @@ class SettingsController extends Controller
         }
         
         $user->save();
-        dd($request->all());
+
+        return back()->with('success', trans('app.success_update_msg'));
+
     }
 
     public function index()

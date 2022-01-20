@@ -13,8 +13,10 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="{{url('/')}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{{url('/')}}/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="{{url('/')}}/toastr/build/toastr.min.css" rel="stylesheet">
     <meta name="theme-color" content="#7952b3">
 
 
@@ -36,6 +38,8 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="{{url('/')}}/css/dashboard.css" rel="stylesheet">
+
+    @stack('header')
 </head>
 

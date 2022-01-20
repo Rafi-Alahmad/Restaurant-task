@@ -2,10 +2,17 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('settings')}}">
+                <a class="nav-link {{ (Request::is('settings')  || Request::is('settings/*')? 'active' : '') }}" aria-current="page" href="{{route('settings')}}">
                     <span data-feather="home"></span>
                     <i class="mx-1 fas fa-cogs "></i>
                     {{trans('app.settings')}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ (Request::is('services')  || Request::is('services/*')? 'active' : '') }}" aria-current="page" href="{{route('services')}}">
+                    <span data-feather="home"></span>
+                    <i class="mx-1 fas fa-clipboard-list"></i>
+                    {{trans('app.services')}}
                 </a>
             </li>
             <li class="nav-item mt-3">

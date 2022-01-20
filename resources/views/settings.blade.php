@@ -36,7 +36,6 @@
                             <div class="input-group-">
                                 <div class="custom-file">
                                     <input name="logo" type="file" accept="image/*" class="form-control" id="logo">
-                                    <!-- <label class="custom-file-label" id="logo-file-label" for="logo">Choose file</label> -->
                                 </div>
                             </div>
                             <p class="help-block">{{trans('app.logo_caption')}}</p>
@@ -62,7 +61,7 @@
 </div>
 @endsection
 
-@push('js')
+@push('footer')
 
 <script>
     document.getElementById('logo').onchange = function() {

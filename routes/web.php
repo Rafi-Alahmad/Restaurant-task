@@ -27,5 +27,9 @@ Route::group(
     function () {
         Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
         Route::post('/settings/update', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');
+        Route::get('/services', [App\Http\Controllers\RestaurantsServicesController::class, 'showServicesScreen'])->name('services');
+        Route::post('/services/create', [App\Http\Controllers\RestaurantsServicesController::class, 'create'])->name('services.create');
+        Route::post('/services/delete', [App\Http\Controllers\RestaurantsServicesController::class, 'delete'])->name('services.delete');
+        Route::post('/services/update', [App\Http\Controllers\RestaurantsServicesController::class, 'update'])->name('services.update');
     }
 );
