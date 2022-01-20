@@ -60,4 +60,6 @@
         }
     }
 </script>
+
+@include('layouts.message')
 @stack('footer')
