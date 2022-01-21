@@ -22,7 +22,7 @@ class ServicesDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('Action', 'services.action')
+            ->addColumn('Action', 'dashboard.services.action')
             ->rawColumns([
                 'Action',
                 'image',
