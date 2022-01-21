@@ -186,7 +186,6 @@
 <script src="{{ url('/') }}/DataTables/DataTables-1.11.3/js/dataTables.bootstrap5.min.js"></script>
 <script src="{{ url('/') }}/DataTables/Responsive-2.2.9/js/dataTables.responsive.min.js"></script>
 <script src="{{ url('/') }}/DataTables/Responsive-2.2.9/js/responsive.bootstrap5.js"></script>
-<!-- <script type="text/javascript" src="DataTables/datatables.min.js"></script> -->
 
 {!! $dataTable->scripts() !!}
 
@@ -323,7 +322,6 @@
 
 
 @push('header')
-<!-- <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/> -->
 <link rel="stylesheet" type="text/css" href="{{ url('/') }}/DataTables/DataTables-1.11.3/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" type="text/css" href="{{ url('/') }}/DataTables/Responsive-2.2.9/css/responsive.bootstrap5.min.css">
 @endpush

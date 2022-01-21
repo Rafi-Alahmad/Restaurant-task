@@ -13,18 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::group(
     ['middleware' => 'auth'],
     function () {
+
+        Route::get('/home', function () {
+            return redirect(route('settings'));
+        })->name('home');
+
         Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
         Route::post('/settings/update', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');
         Route::get('/services', [App\Http\Controllers\RestaurantsServicesController::class, 'showServicesScreen'])->name('services');
@@ -33,3 +34,6 @@ Route::group(
         Route::post('/services/update', [App\Http\Controllers\RestaurantsServicesController::class, 'update'])->name('services.update');
     }
 );
+
+Route::get('restaurant', [App\Http\Controllers\HomeController::class, 'showRestaurant'])->name('restaurant');
+

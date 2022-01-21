@@ -10,8 +10,6 @@
     <title>Restaurant dashboard - {{ Auth::guard()->user()->name }}</title>
 
 
-
-
     <!-- Bootstrap core CSS -->
     <link href="{{url('/')}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
