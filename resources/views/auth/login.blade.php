@@ -8,8 +8,8 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .gradiant-background {
-            background: rgb(255, 29, 0);
-            background: radial-gradient(circle, rgba(255, 29, 0, 0.2836484935771183) 0%, rgba(235, 253, 0, 0.2752451322325805) 100%);
+            background: rgb(87, 87, 87);
+            background: linear-gradient(63deg, rgba(87, 87, 87, 0.21922272326899506) 32%, rgba(0, 65, 253, 0.22762608461353295) 100%);
         }
     </style>
 </head>

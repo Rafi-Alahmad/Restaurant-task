@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 <head>
@@ -9,8 +8,8 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .gradiant-background {
-            background: rgb(255, 29, 0);
-            background: radial-gradient(circle, rgba(255, 29, 0, 0.2836484935771183) 0%, rgba(235, 253, 0, 0.2752451322325805) 100%);
+            background: rgb(87, 87, 87);
+            background: linear-gradient(63deg, rgba(87, 87, 87, 0.21922272326899506) 32%, rgba(0, 65, 253, 0.22762608461353295) 100%);
         }
     </style>
 </head>
@@ -52,13 +51,13 @@
                     </div>
 
 
-                    <div class="row mt-5 mb-0">
-                        <div class=" ms-auto w-auto">
-                            <button type="reset" class="ms-auto btn btn-secondary">
-                                {{ trans('app.reset') }}
-                            </button>
+                    <div class="row mt-3 mb-0">
+                        <div class="col-md-8 offset-md-4 d-flex justify-content-lg-between">
                             <button type="submit" class=" btn btn-primary">
                                 {{ __('Register') }}
+                            </button>
+                            <button type="reset" class="ms-auto btn btn-secondary">
+                                {{ trans('app.reset') }}
                             </button>
 
                         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\RestaurantsDataTable;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,15 +24,29 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(RestaurantsDataTable $restaurantsDataTable)
     {
-        return view('home');
+        return $restaurantsDataTable->render('home');
     }
 
 
 
-    // public function showMainScreen(Type $var = null)
-    // {
-    //     $restaurants = User::
-    // }
+    public function showRestaurant(Request $request)
+    {
+        $restaurant = User::find($request->restaurant);
+
+        if (!$restaurant) {
+            return redirect(route('home'));
+        }
+
+        $restaurantServices = Service::where('restaurant_id', $restaurant->id)->get();
+        $restaurantServicesTypes = Service::select('type')->where('restaurant_id', $restaurant->id)->distinct()->get();
+
+        // dd(empty($restaurantServicesTypes->toArray()));
+        return view('restaurants.menu', [
+            'restaurantServices' => $restaurantServices,
+            'restaurantServicesTypes' => $restaurantServicesTypes,
+            'restaurant' => $restaurant,
+        ]);
+    }
 }

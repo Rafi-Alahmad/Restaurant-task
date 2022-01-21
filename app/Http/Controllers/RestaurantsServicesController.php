@@ -16,7 +16,7 @@ class RestaurantsServicesController extends Controller
 
     public function showServicesScreen(ServicesDataTable $servicesDataTable)
     {
-        return $servicesDataTable->render('services.services');
+        return $servicesDataTable->render('dashboard.services.services');
     }
 
     public function create(Request $request)

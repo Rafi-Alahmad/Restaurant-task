@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -22,9 +22,6 @@ Route::group(
     ['middleware' => 'auth'],
     function () {
 
-        Route::get('/home', function () {
-            return redirect(route('settings'));
-        })->name('home');
 
         Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
         Route::post('/settings/update', [App\Http\Controllers\SettingsController::class, 'update'])->name('settings.update');

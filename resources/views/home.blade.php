@@ -51,7 +51,7 @@
         <section id="responsive-datatable">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body">
                             {{ $dataTable->table([
                                 "class" => "responsive table",
